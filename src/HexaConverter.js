@@ -1,22 +1,15 @@
 import React, { Component } from 'react';
-import './Translator.js'
 
 class HexaConverter extends Component {
-  constructor(args) {
-    super(args);
 
-    this.localHexaConverter = this.localHexaConverter.bind(this);
-
-  }
-
-  localHexaConverter(e) {
-    this.props.hexaConverter();
+  convertToHexa() {
+    return (this.props.number >>> 0).toString(16)
   }
 
   render() {
     return(
       <div className="hexa-conversion">
-
+        <p>Hexa: {this.convertToHexa()}</p>
       </div>
     );
   }

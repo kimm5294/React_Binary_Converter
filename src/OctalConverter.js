@@ -1,22 +1,15 @@
 import React, { Component } from 'react';
-import './Translator.js'
 
 class OctalConverter extends Component {
-  constructor(args) {
-    super(args);
 
-    this.localOctalConverter = this.localOctalConverter.bind(this);
-
-  }
-
-  localOctalConverter(e) {
-    this.props.octalConverter();
+  convertToOctal() {
+    return (this.props.number >>> 0).toString(8)
   }
 
   render() {
     return(
       <div className="octal-conversion">
-
+        <p>Octal: {this.convertToOctal()}</p>
       </div>
     );
   }

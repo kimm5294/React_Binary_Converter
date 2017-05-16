@@ -1,22 +1,15 @@
 import React, { Component } from 'react';
-import './Translator.js'
 
 class BinaryConverter extends Component {
-  constructor(args) {
-    super(args);
 
-    this.localBinaryConverter = this.localBinaryConverter.bind(this);
-
-  }
-
-  localBinaryConverter(e) {
-    this.props.binaryConverter();
+  convertToBinary() {
+    return (this.props.number >>> 0).toString(2)
   }
 
   render() {
     return(
       <div className="binary-conversion">
-
+        <p>Binary: {this.convertToBinary()}</p>
       </div>
     );
   }
